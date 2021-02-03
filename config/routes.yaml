@@ -1,3 +1,47 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+projects:
+  path: /projects
+  controller: App\Controller\ProjectController::index
+  methods:    [GET]
+
+project_get:
+  path: /project/{projectId}
+  controller: App\Controller\ProjectController::show
+  methods: [ GET ]
+
+project_create:
+  path: /project
+  controller: App\Controller\ProjectController::create
+  methods:    [POST]
+
+project_delete:
+  path: /project/{projectId}
+  controller: App\Controller\ProjectController::delete
+  methods: [ DELETE ]
+
+tasks:
+  path: /tasks
+  controller: App\Controller\TaskController::index
+  methods:    [GET]
+
+tasks_by_project:
+  path: /tasks/project/{projectId}
+  controller: App\Controller\TaskController::listByProject
+  methods:    [GET]
+
+task_create:
+  path: /task
+  controller: App\Controller\TaskController::create
+  methods:    [POST]
+
+task_update:
+    path: /task/{taskId}
+    controller: App\Controller\TaskController::edit
+    methods: [ PUT ]
+
+task_delete:
+  path: /task/{taskId}
+  controller: App\Controller\TaskController::delete
+  methods: [ DELETE ]
+
+
+
